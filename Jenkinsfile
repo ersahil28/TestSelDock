@@ -29,11 +29,4 @@ pipeline {
             }
         }
     }
-
-    // Post actions, clean up, etc.
-    post {
-        always {
-            // Clean up or perform necessary actions
-        }
-    }
 }
