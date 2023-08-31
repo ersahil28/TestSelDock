@@ -2,16 +2,16 @@ pipeline {
     // master executor should be set to 0
     agent any
     stages {
-
-        stage('Set Environment') {
-                environment {
-                    PATH = "${env.PATH};c:\\Windows\\System32"
+            stage('Set Environment') {
+                steps {
+                    bat 'call setenv.bat'
                 }
+            }
+    stages {
         stage('Build Jar') {
             steps {
                 //sh
-                //bat "mvn clean package -DskipTests"
-                bat "java -c"
+                bat "mvn clean package -DskipTests"
             }
         }
         stage('Build Image') {
@@ -30,5 +30,4 @@ pipeline {
             }
         }
     }
-}
 }

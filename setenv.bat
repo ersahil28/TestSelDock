@@ -1,0 +1,3 @@
+@echo off
+echo Setting environment variables...
+set PATH=%PATH%;C:\Windows\System32
