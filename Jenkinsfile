@@ -2,6 +2,11 @@ pipeline {
     // master executor should be set to 0
     agent any
     stages {
+
+        stage('Set Environment') {
+                environment {
+                    PATH = "${env.PATH};c:\\Windows\\System32"
+                }
         stage('Build Jar') {
             steps {
                 //sh
